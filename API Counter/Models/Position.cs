@@ -6,5 +6,7 @@
 
         public string Position_Name { get; set; }
 
+        public ICollection<PlayerPosition> PlayersPositions { get; set; }
+
     }
 }
