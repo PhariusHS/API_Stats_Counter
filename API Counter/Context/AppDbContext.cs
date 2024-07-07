@@ -34,6 +34,10 @@ namespace API_Counter.Context
             modelBuilder.Entity<ManagerTeam>()
                 .HasOne(m => m.Manager)
                 .WithMany(mt => mt.ManagerTeams)
+                .HasForeignKey(m => m.Manager_Id);
+            modelBuilder.Entity<ManagerTeam>()
+                .HasOne(t => t.Team)
+                .WithMany(mt => mt.TeamManagers)
                 .HasForeignKey(t => t.Team_Id);
 
         }
