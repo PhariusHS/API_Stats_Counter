@@ -40,6 +40,18 @@ namespace API_Counter.Context
                 .WithMany(mt => mt.TeamManagers)
                 .HasForeignKey(t => t.Team_Id);
 
+            modelBuilder.Entity<PlayerPosition>()
+                .HasKey(pp => new { pp.Player_Id, pp.Position_Id });
+            modelBuilder.Entity<PlayerPosition>()
+                .HasOne(p => p.Player)
+                .WithMany(pp  => pp.PlayerPositions)
+                .HasForeignKey(p =>  p.Player_Id);
+            modelBuilder.Entity<PlayerPosition>()
+                .HasOne(p => p.Position)
+                .WithMany(pp => pp.PlayersPositions)
+                .HasForeignKey(p => p.Position_Id);
+
+
         }
     }
 }
