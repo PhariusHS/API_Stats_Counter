@@ -6,7 +6,7 @@
         public required string Name { get; set; }
 
         public int Team_Id { get; set; }
-        public DateTime DateCreation { get; set; }
+        public DateTime BirthDate { get; set; }
 
         public Team Team { get; set; } // connection one-many -> Every player has just one team
 

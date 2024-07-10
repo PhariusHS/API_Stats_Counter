@@ -1,12 +1,12 @@
-﻿namespace API_Counter.Models
-{
-    public class Position
+﻿    namespace API_Counter.Models
     {
-        public int Position_Id { get; set; }
+        public class Position
+        {
+            public int Position_Id { get; set; }
 
-        public string Position_Name { get; set; }
+            public string Position_Name { get; set; }
 
-        public ICollection<PlayerPosition> PlayersPositions { get; set; }
+            public ICollection<PlayerPosition> PlayersPositions { get; set; }
 
+        }
     }
-}
